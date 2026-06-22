@@ -1,6 +1,6 @@
 # recompose-legal
 
-Public legal & support pages for the **Recompose** iOS app, served via GitHub Pages.
+Public legal & support pages for the **Atelier** iOS app, served via GitHub Pages.
 
 - `privacy.html` — Privacy Policy (JA / EN)
 - `terms.html` — Terms of Use (JA / EN)
