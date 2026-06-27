@@ -7,6 +7,6 @@ Public legal & support pages for the **Atelier** iOS app, served via GitHub Page
 - `support.html` — Support & FAQ (JA / EN)
 - `index.html` — Landing
 
-Live: https://gyougi.github.io/atelier-legal/
+Live: https://atelier-legal.glspace.co.jp/ (旧址 https://gyougi.github.io/atelier-legal/ 301→自定义域名)
 
 Contact: support@glspace.co.jp
