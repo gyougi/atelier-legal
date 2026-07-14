@@ -3,30 +3,130 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Atelier</title>
+<title>Atelier — Legal &amp; Support</title>
+<meta name="theme-color" content="#040507">
+<link rel="icon" type="image/png" href="assets/app-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
 <style>
-  :root { color-scheme: light dark; }
-  body { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Segoe UI", Roboto, sans-serif;
-         line-height: 1.75; max-width: 640px; margin: 0 auto; padding: 64px 20px;
-         color: #1c1c1e; background: #fff; }
-  @media (prefers-color-scheme: dark) { body { color: #e6e6e6; background: #121212; } a { color: #4db6ac; } }
-  h1 { font-size: 2rem; margin-bottom: .2em; }
-  p.tag { color: #888; margin-top: 0; }
-  ul { list-style: none; padding: 0; margin-top: 2.5em; }
-  li { margin: .6em 0; }
-  a { color: #00897b; text-decoration: none; font-size: 1.1rem; }
-  a:hover { text-decoration: underline; }
-  footer { margin-top: 4em; font-size: .85rem; color: #888; }
+  *{ box-sizing:border-box; margin:0; padding:0; -webkit-font-smoothing:antialiased; }
+  :root{ color-scheme:dark; }
+  html{ scroll-behavior:smooth; }
+  body{
+    --bg:#040507; --bg2:#0a0b10;
+    --text:#f4f5f8; --text-dim:rgba(244,245,248,.72); --text-faint:rgba(244,245,248,.42);
+    --surface:rgba(255,255,255,.035); --surface2:rgba(255,255,255,.06);
+    --border:rgba(255,255,255,.12); --hair:rgba(255,255,255,.08);
+    --accent:#eceef2; --accent2:#b6bbc6; --ink:#101218;
+    --font-body:'Noto Sans JP',system-ui,sans-serif;
+    --font-display:'Manrope','Noto Sans JP',sans-serif;
+    --font-serif:'Cormorant Garamond','Noto Serif JP',serif;
+    color:var(--text); font-family:var(--font-body); line-height:1.7;
+    background:
+      radial-gradient(58% 46% at 14% 6%, rgba(140,150,172,.15) 0%, transparent 60%),
+      radial-gradient(48% 42% at 88% 14%, rgba(84,90,108,.17) 0%, transparent 55%),
+      radial-gradient(60% 50% at 50% 100%, rgba(112,120,142,.11) 0%, transparent 60%),
+      linear-gradient(180deg,var(--bg2),var(--bg));
+    background-attachment:fixed; min-height:100vh; overflow-x:hidden;
+    display:flex; flex-direction:column;
+  }
+  ::selection{ background:var(--accent); color:var(--ink); }
+  a{ color:inherit; }
+  .nav{ position:fixed; top:0; left:0; right:0; z-index:50; display:flex; align-items:center; justify-content:space-between;
+    padding:13px clamp(18px,5vw,40px); background:rgba(6,7,10,.62);
+    backdrop-filter:blur(18px) saturate(1.4); -webkit-backdrop-filter:blur(18px) saturate(1.4); border-bottom:1px solid var(--hair); }
+  .brand{ display:flex; align-items:center; gap:11px; text-decoration:none; color:var(--text); }
+  .brand img{ width:34px; height:34px; border-radius:8px; box-shadow:0 10px 28px rgba(0,0,0,.5); }
+  .brand .wm{ font-family:var(--font-serif); font-weight:600; font-size:20px; letter-spacing:.01em; line-height:1; }
+  .brand .sub{ font-size:9px; letter-spacing:.18em; text-transform:uppercase; color:var(--text-faint); margin-top:3px; }
+  .back{ display:inline-flex; align-items:center; gap:7px; text-decoration:none; color:var(--text-dim); font-size:12.5px; font-weight:600;
+    padding:8px 15px; border:1px solid var(--hair); border-radius:999px; background:var(--surface2); transition:.2s; white-space:nowrap; }
+  .back:hover{ color:var(--text); border-color:var(--border); }
+  .back svg{ width:13px; height:13px; stroke:currentColor; fill:none; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; }
+  .wrap{ flex:1; max-width:720px; width:100%; margin:0 auto; padding:150px clamp(20px,5vw,32px) 40px; position:relative; z-index:1; }
+  .eyebrow{ display:inline-flex; align-items:center; gap:8px; padding:7px 14px; background:var(--surface2); border:1px solid var(--hair);
+    border-radius:999px; font-size:11px; font-weight:600; letter-spacing:.06em; color:var(--text-dim); text-transform:uppercase; }
+  .eyebrow .dot{ width:6px; height:6px; border-radius:50%; background:var(--accent); }
+  h1{ font-family:var(--font-display); font-weight:700; letter-spacing:-.02em; line-height:1.06;
+    font-size:clamp(34px,7vw,58px); margin:22px 0 12px; }
+  .tag{ color:var(--text-dim); font-size:clamp(15px,1.7vw,17px); max-width:50ch; }
+  .cards{ margin-top:44px; display:grid; gap:14px; }
+  .card{ display:flex; align-items:center; gap:18px; text-decoration:none; color:var(--text);
+    background:var(--surface); border:1px solid var(--hair); border-radius:18px; padding:22px clamp(20px,4vw,26px); transition:.22s; }
+  .card:hover{ border-color:var(--border); background:var(--surface2); transform:translateY(-2px); }
+  .card .ic{ width:46px; height:46px; flex:0 0 auto; display:grid; place-items:center; border-radius:13px; background:var(--surface2); border:1px solid var(--hair); }
+  .card .ic svg{ width:22px; height:22px; stroke:var(--text); fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+  .card .txt{ flex:1; min-width:0; }
+  .card .t{ font-family:var(--font-display); font-weight:600; font-size:16.5px; letter-spacing:-.01em; }
+  .card .d{ color:var(--text-faint); font-size:12.5px; letter-spacing:.02em; margin-top:2px; }
+  .card .arw{ color:var(--text-faint); flex:0 0 auto; transition:.22s; }
+  .card:hover .arw{ color:var(--text); transform:translateX(3px); }
+  .card .arw svg{ width:18px; height:18px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+  .foot{ max-width:720px; width:100%; margin:0 auto; padding:24px clamp(20px,5vw,32px) 60px; position:relative; z-index:1; }
+  .foot-inner{ border-top:1px solid var(--hair); padding-top:24px; display:flex; flex-wrap:wrap; gap:14px; align-items:center; justify-content:space-between; }
+  .foot .home{ display:inline-flex; align-items:center; gap:8px; color:var(--text-dim); text-decoration:none; font-size:13px; transition:.2s; }
+  .foot .home:hover{ color:var(--text); }
+  .foot .cp{ color:var(--text-faint); font-size:12.5px; }
+  @media (max-width:520px){ .brand .sub{ display:none; } .back span{ display:none; } .back{ padding:8px 11px; } }
+  @media (prefers-reduced-motion:reduce){ *{ animation:none!important; scroll-behavior:auto!important; } .card:hover{ transform:none; } }
 </style>
 </head>
 <body>
+
+<nav class="nav">
+  <a class="brand" href="index.html">
+    <img src="assets/app-icon.png" alt="Atelier" width="34" height="34">
+    <span style="line-height:1.05;">
+      <span class="wm">Atelier</span>
+      <span class="sub" style="display:block;">写真トリミング</span>
+    </span>
+  </a>
+  <a class="back" href="https://atelier.glspace.co.jp/">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+    <span>サイトに戻る</span>
+  </a>
+</nav>
+
+<main class="wrap">
+  <div class="eyebrow"><span class="dot"></span>Legal &amp; Support</div>
   <h1>Atelier</h1>
-  <p class="tag">端末内でAI二次構図 / On-device AI photo recompose</p>
-  <ul>
-    <li><a href="privacy.html">プライバシーポリシー / Privacy Policy →</a></li>
-    <li><a href="terms.html">利用規約 / Terms of Use →</a></li>
-    <li><a href="support.html">サポート / Support →</a></li>
-  </ul>
-  <footer>© 2026 GLSPACE 株式会社 — Atelier</footer>
+  <p class="tag">端末内でAI二次構図 / On-device AI photo recompose.<br>ポリシー・規約・サポートは以下からご確認いただけます。</p>
+
+  <div class="cards">
+    <a class="card" href="privacy.html">
+      <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+      <span class="txt">
+        <span class="t">プライバシーポリシー</span>
+        <span class="d">Privacy Policy</span>
+      </span>
+      <span class="arw"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></span>
+    </a>
+    <a class="card" href="terms.html">
+      <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 12h6M9.5 15.5h6"/></svg></span>
+      <span class="txt">
+        <span class="t">利用規約</span>
+        <span class="d">Terms of Use</span>
+      </span>
+      <span class="arw"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></span>
+    </a>
+    <a class="card" href="support.html">
+      <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a8 8 0 00-8 8v4a3 3 0 003 3h1v-6H6v-1a6 6 0 0112 0v1h-2v6h1a3 3 0 003-3v-4a8 8 0 00-8-8z"/></svg></span>
+      <span class="txt">
+        <span class="t">サポート</span>
+        <span class="d">Support &amp; FAQ</span>
+      </span>
+      <span class="arw"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></span>
+    </a>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <a class="home" href="https://atelier.glspace.co.jp/">atelier.glspace.co.jp</a>
+    <div class="cp">© 2026 GLSPACE 株式会社 — Atelier</div>
+  </div>
+</footer>
+
 </body>
 </html>
